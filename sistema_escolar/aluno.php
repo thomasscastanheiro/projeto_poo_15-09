@@ -8,7 +8,7 @@ class Aluno() extends Pessoa{
     public int $nota2;
     public int $nota3;
     public int $mediaFinal;
-    public string $situação;
+    public string $situacao;
     public string $responsavel;
     public int $dataMatricula;
 
@@ -32,6 +32,16 @@ class Aluno() extends Pessoa{
         $this->mediaFinal = ($this->nota1 + $this->nota2 + $this->nota3)/3;
     }
 
-    
+    public function AlterarSituacao($situacao){
+        $this->situacao = $situacao;
+    }
+
+    public function TrocarTurma($turma){
+        $this->turmaAtual = $turma;
+    }
+
+    public function ExibirDados(){
+        echo '<pre>Nome: '.$this->nome.'; Responsável: '.$this->responsavel.'; Matrícula: '.$this->matricula.'; Turma: '.$this->turma.'; Situação Final: '.$this->situacao;
+    }
 }
 ?>
