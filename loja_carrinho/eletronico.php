@@ -34,5 +34,12 @@ class Eletronico extends Produto{
         }
     }
 
-    public function ExibirDados()
+    public function ExibirDados(){
+        echo 'Nome: '.$this->nome.'<br>';
+        echo 'Código: '.$this->codigo.'<br>';
+        echo 'Preço: '.$this->preco.'<br>';
+        echo 'Marca: '.$this->marca.'<br>';
+        echo 'Status: '.$this->status.'<br>';
+        echo 'Modelo: '.$this->modelo.'<br>';
+    }
 }
