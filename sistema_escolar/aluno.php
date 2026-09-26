@@ -1,6 +1,6 @@
 <?php
-include_once "./sistema_escolar/pessoa.php";
-class Aluno() extends Pessoa{
+include_once "./pessoa.php";
+class Aluno extends Pessoa{
     public int $matricula;
     public int $serie;
     public int $turmaAtual;
@@ -9,7 +9,7 @@ class Aluno() extends Pessoa{
     public int $nota3;
     public int $mediaFinal;
     public string $situacao;
-    public string $responsavel;
+    public string $responsavel = "";
     public int $dataMatricula;
 
     public function Matricular($turma){

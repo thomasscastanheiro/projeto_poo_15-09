@@ -1,9 +1,9 @@
 <?php
 
-include_once "./sistema_biblioteca/itemBiblioteca.php";
-include_once "./sistema_biblioteca/livro.php";
-include_once "./sistema_biblioteca/revista.php";
-include_once "./sistema_biblioteca/usuarioBiblioteca.php";
+include_once "./itemBiblioteca.php";
+include_once "./livro.php";
+include_once "./revista.php";
+include_once "./usuario.php";
 
 $livro1 = new Livro();
 $livro1->CadastrarLivro("Dom Casmurro", "Machado de Assis");

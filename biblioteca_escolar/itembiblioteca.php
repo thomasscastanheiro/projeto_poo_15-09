@@ -1,5 +1,4 @@
 <?php
-
 class ItemBiblioteca{
     public string $titulo;
     public string $autor;
@@ -9,7 +8,7 @@ class ItemBiblioteca{
     public string $editora;
     public int $quantidade;
     public int $disponivel;
-    public string $localizacao;
+    public string $localizacao = "";
     public string $status;
 
     public function CadastrarItem($titulo, $codigo){
@@ -40,17 +39,16 @@ class ItemBiblioteca{
 
     public function ExibirDados(){
         echo "<pre>";
-        echo "Título: ".$this->titulo;
-        echo "Autor: ".$this->autor;
-        echo "Código: ".$this->codigo;
-        echo "Categoria: ".$this->categoria;
-        echo "Ano de publicação: ".$this->anoPublicacao;
-        echo "Editora: ".$this->editora;
-        echo "Quantidade: ".$this->quantidade;
-        echo "Disponível: ".$this->disponivel;
-        echo "Localização: ".$this->localizacao;
-        echo "Status: ".$this->status;
-        echo "</pre>";
+        echo "Título: ".$this->titulo.'<br>';
+        echo "Autor: ".$this->autor.'<br>';
+        echo "Código: ".$this->codigo.'<br>';
+        echo "Categoria: ".$this->categoria.'<br>';
+        echo "Ano de publicação: ".$this->anoPublicacao.'<br>';
+        echo "Editora: ".$this->editora.'<br>';
+        echo "Quantidade: ".$this->quantidade.'<br>';
+        echo "Disponível: ".$this->disponivel.'<br>';
+        echo "Localização: ".$this->localizacao.'<br>';
+        echo "Status: ".$this->status.'<br>';
     }
 }
 ?>

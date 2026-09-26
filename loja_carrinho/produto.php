@@ -2,47 +2,46 @@
 class Produto{
     public string $nome;
     public int $codigo;
-    public int $preco;
+    public float $preco;
     public string $marca;
     public string $categoria;
     public string $descricao;
     public int $quantidadeEstoque;
-    public int $peso;
+    public float $peso;
     public string $fornecedor;
-    public string $status = "Ativo";
+    public string $statusProduto;
 
-    public function Cadastrar($nome, $codigo, $preco){
+    public function CadastrarProduto($nome, $codigo, $preco){
         $this->nome = $nome;
         $this->codigo = $codigo;
         $this->preco = $preco;
     }
 
-    public function AtualizarPreco($novoPreco){
-        $this->preco = $novoPreco;
+    public function AlterarPreco($preco){
+        $this->preco = $preco;
     }
 
     public function AplicarDesconto($percentual){
-        $this->preco = ($this->preco*$percentual)/100;
+        $this->preco = $this->preco - ($this->preco * $percentual / 100);
     }
 
     public function AtualizarEstoque($quantidade){
         $this->quantidadeEstoque = $quantidade;
     }
 
-    public function AtualizarStatus(){
-        if ($this->status === "Ativo") {
-            $this->status = "Indisponível";
-        } else {
-            $this->status = "Ativo";
-        }
+    public function AlterarStatus($status){
+        $this->statusProduto = $status;
     }
 
     public function ExibirDados(){
-        echo 'Nome: '.$this->nome.'<br>';
-        echo 'Código: '.$this->codigo.'<br>';
-        echo 'Preço: '.$this->preco.'<br>';
-        echo 'Marca: '.$this->marca.'<br>';
-        echo 'Status: '.$this->status.'<br>';
+        echo "<pre>";
+        echo "Nome: ".$this->nome.'<br>';
+        echo "Código: ".$this->codigo.'<br>';
+        echo "Preço: R$ ".$this->preco.'<br>';
+        echo "Marca: ".$this->marca.'<br>';
+        echo "Categoria: ".$this->categoria.'<br>';
+        echo "Estoque: ".$this->quantidadeEstoque.'<br>';
+        echo "Status: ".$this->statusProduto;
     }
 }
 ?>

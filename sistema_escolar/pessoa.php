@@ -31,9 +31,9 @@ class Pessoa{
 
     public function AlterarStatus(){
         if ($this->status = "ativo") {
-            $this->status = "inativo"
+            $this->status = "inativo";
         } else {
-            $this->status = "ativo"
+            $this->status = "ativo";
         }
     }
 

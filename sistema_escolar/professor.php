@@ -1,13 +1,13 @@
 <?php
-include_once "./sistema_escolar/pessoa.php";
-class Professor() extends Pessoa{
+include_once "./pessoa.php";
+class Professor extends Pessoa{
     public int $registro;
     public string $disciplina;
-    public int $cargaHoraria;
-    public int $salario;
+    public int $cargaHoraria = 0;
+    public int $salario = 0;
     public string $formacao;
     public string $especialidade;
-    public array $turmas = [''];
+    public array $turmas = [];
     public $horarioAula;
     public int $anoContrataçao;
     public string $status;
@@ -22,7 +22,7 @@ class Professor() extends Pessoa{
 
     public function removerTurma($turma) {
         foreach ($this->turmas as $i => $item) {
-            if ($item === $turma) unset($this->turmasAtendidas[$i]);
+            if ($item === $turma) unset($this->turmas[$i]);
         }
     }
 
@@ -35,7 +35,7 @@ class Professor() extends Pessoa{
     }
 
     public function ExibirDados(){
-        echo 'Professor: '.$this->nome.'<br>Disciplina: '.$this->disciplina'<br>'.'Carga horária: '.$this->cargaHoraria.'Salário: R$'.$this->salario;
+        echo 'Professor: '.$this->nome.'<br>Disciplina: '.$this->disciplina.'<br>'.'Carga horária: '.$this->cargaHoraria.'Salário: R$'.$this->salario;
     }
     
 }

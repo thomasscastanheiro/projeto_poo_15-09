@@ -3,7 +3,7 @@ class Turma{
     public $nomeTurma;
     public $codigoTurma;
     public $anoLetivo;
-    public array $listaAlunos = ['';]
+    public array $listaAlunos = [];
     public $sala, $turno, $professorResponsavel, $limiteAlunos, $curso, $statusTurma;
 
     public function DefinirProfessor($professor){
@@ -13,6 +13,7 @@ class Turma{
     public function adicionarAluno($aluno){
         if (count($this->listaAlunos) < $this->limiteAlunos) {
             $this->listaAlunos[] += $aluno;
+    }
     }
 
     public function removerAluno($aluno){
@@ -32,4 +33,4 @@ class Turma{
      public function exibirDados(){
         echo 'Nome: '.$this->nomeTurma.'; Código: '.$this->codigoTurma.'; Ano letivo: '.$this->anoLetivo.'; Sala: '.$this->sala;
      }
-}
+    }

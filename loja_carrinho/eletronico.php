@@ -1,20 +1,23 @@
 <?php
+include_once "./produto.php";
+
 class Eletronico extends Produto{
     public string $modelo;
-    public int $voltagem;
+    public string $voltagem;
     public int $garantiaMeses;
-    public int $numeroSerie;
+    public string $numeroSerie;
     public string $cor;
-    public int $capacidade;
-    public $sistemaOperacional;
-    public int $consumoEnergia;
-    public array $acessorios = [''];
+    public string $capacidade;
+    public string $sistemaOperacional;
+    public float $consumoEnergia;
+    public string $acessoriosInclusos;
+    public string $assistenciaTecnica;
 
-    public function DefinirGarantia($garantia){
-        $this->garantiaMeses = $garantia;
+    public function DefinirGarantia($meses){
+        $this->garantiaMeses = $meses;
     }
 
-    public function AtualizarVoltagem($voltagem){
+    public function AlterarVoltagem($voltagem){
         $this->voltagem = $voltagem;
     }
 
@@ -22,24 +25,25 @@ class Eletronico extends Produto{
         $this->capacidade = $capacidade;
     }
 
-    public function InformarAcessorios(array $acessorios){
-        $this->acessorios = array $acessorios;
+    public function InformarAcessorios($acessorios){
+        $this->acessoriosInclusos = $acessorios;
     }
 
     public function VerificarGarantia(){
-        if (!empty($this->garantiaMeses)) {
-            echo 'Garantia: '.$this->garantiaMeses.' meses';
-        } else{
-            echo 'O produto não possui garantia.';
+        if($this->garantiaMeses > 0){
+            return "Possui garantia";
         }
+        return "Não possui garantia";
     }
 
-    public function ExibirDados(){
-        echo 'Nome: '.$this->nome.'<br>';
-        echo 'Código: '.$this->codigo.'<br>';
-        echo 'Preço: '.$this->preco.'<br>';
-        echo 'Marca: '.$this->marca.'<br>';
-        echo 'Status: '.$this->status.'<br>';
-        echo 'Modelo: '.$this->modelo.'<br>';
+    public function ExibirDadosEletronico(){
+        echo "<pre>";
+        echo "Produto: ".$this->nome.'<br>';
+        echo "Modelo: ".$this->modelo.'<br>';
+        echo "Voltagem: ".$this->voltagem.'<br>';
+        echo "Garantia: ".$this->garantiaMeses." meses<br>";
+        echo "Capacidade: ".$this->capacidade.'<br>';
+        echo "Garantia: ".$this->VerificarGarantia();
     }
 }
+?>

@@ -1,5 +1,4 @@
 <?php
-
 class UsuarioBiblioteca{
     public string $nome;
     public int $cpf;
@@ -39,11 +38,12 @@ class UsuarioBiblioteca{
 
       public function ExibirDados(){
         echo "<pre>";
-        echo "Nome: ".$this->nome;
-        echo "CPF: ".$this->cpf;
-        echo "Email: ".$this->email;
-        echo "Telefone: ".$this->telefone;
-        echo "Matrícula: ".$this->matricula;
+        echo "Nome: ".$this->nome.'<br>';
+        echo "CPF: ".$this->cpf.'<br>';
+        echo "Email: ".$this->email.'<br>';
+        echo "Telefone: ".$this->telefone.'<br>';
+        echo "Matrícula: ".$this->matricula.'<br>';
         echo "Empréstimos atuais: ".$this->emprestimosAtuais;
-        echo "</pre>";
     }
+}
+?>

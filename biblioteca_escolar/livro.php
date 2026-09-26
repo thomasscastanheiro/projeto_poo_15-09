@@ -1,6 +1,5 @@
 <?php
-
-include_once "./sistema_biblioteca/itemBiblioteca.php";
+include_once "./itemBiblioteca.php";
 
 class Livro extends ItemBiblioteca{
     public int $numeroPaginas;
